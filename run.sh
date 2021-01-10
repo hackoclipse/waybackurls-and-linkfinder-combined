@@ -12,7 +12,7 @@ cat output-wayback-urls-download.txt | sed 's/null//' > output-wayback-urls-down
 
 wget -k -nv -i output-wayback-urls-download-fixxed-null.txt; 
 
-python3 ../linkfinder.py -i "*.$2" --output cli | sort -u > output-all-urls-wayback-js.txt # change to location with linkfinder.py file.
+python3 ../linkfinder.py -i "*.$2*" --output cli | sort -u > output-all-urls-wayback-js.txt # change to location with linkfinder.py file.
 
 grep "web.archive.org" output-all-urls-wayback-js.txt | awk -F "web.archive.org/" '{print $2}' | sed -r 's/^.{19}//' > output-all-urls-wayback-js-stript.txt
 grep -v "web.archive.org" output-all-urls-wayback-js.txt > output-all-urls-wayback-js-stript2.txt
