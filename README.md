@@ -9,7 +9,7 @@ https://github.com/tomnomnom/waybackurls
 
 this would download the files directly from the waybackmachine server.
 
-you do need multiple tools to get it to work and need to change line 12 in the bash file to the correct python file for linkfinder.
+you do need multiple tools to get it to work and need to change line 13 in the bash file to the correct python file for linkfinder.
 
 you need jq, wget, curl, waybackurls, python3 and LinkFinder fully installed.
 
