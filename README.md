@@ -14,6 +14,7 @@ you do need multiple tools to get it to work and need to change line 15 in the b
 you need jq, wget, curl, waybackurls, python3 and LinkFinder fully installed.
 
 this does save the files in the same folder so it's reccomanded to start this in a new folder.
+
 the output would be placed in "output.txt" file.
 
 to run it send the command as:
