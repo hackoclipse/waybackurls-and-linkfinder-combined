@@ -1,3 +1,4 @@
+#!/bin/bash
 echo $1 | waybackurls | grep "\.$2" | sed 's/\?.*//' | grep -v "people.zeelandnet.nl" | sort -u > output-wayback.txt;
 echo "amount of urls: $(cat output-wayback.txt | wc -l)"
 for a in $(cat output-wayback.txt)
@@ -13,6 +14,6 @@ python3 ../linkfinder.py -i "*.$2" --output cli | sort -u > output-all-urls-wayb
 
 grep "web.archive.org" output-all-urls-wayback-js.txt | awk -F "web.archive.org/" '{print $2}' | sed -r 's/^.{19}//' > output-all-urls-wayback-js-stript.txt
 grep -v "web.archive.org" output-all-urls-wayback-js.txt > output-all-urls-wayback-js-stript2.txt
-cat output-all-urls-wayback-js-stript*.txt | sort -u > output-all-urls-wayback-js2.txt
+cat output-all-urls-wayback-js-stript*.txt | sort -u > output.txt
 rm *.$2*;
-cat output-all-urls-wayback-js2.txt;
+cat output.txt;
