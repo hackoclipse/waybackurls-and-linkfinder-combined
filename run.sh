@@ -1,11 +1,11 @@
 #!/bin/bash
 # credit bl4ckh4ck5
 # https://twitter.com/bl4ckh4ck5
-echo $1 | waybackurls | grep "\.$2" | sed 's/\?.*//' | sort -u > output-wayback.txt;
+echo $1 | waybackurls | grep "\.$2" > output-wayback.txt;
 echo "amount of urls: $(cat output-wayback.txt | wc -l)"
 for a in $(cat output-wayback.txt)
 do
-	echo "getting latest url waybackmachine: $a"
+	echo "get url waybackmachine: $a"
 	curl https://archive.org/wayback/available?url=$a | jq .archived_snapshots.closest.url | sed 's/"//' | sed 's/"//' >> output-wayback-urls-download.txt
 done
 cat output-wayback-urls-download.txt | sed 's/null//' > output-wayback-urls-download-fixxed-null.txt;
