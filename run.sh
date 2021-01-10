@@ -1,5 +1,5 @@
 #!/bin/bash
-echo $1 | waybackurls | grep "\.$2" | sed 's/\?.*//' | grep -v "people.zeelandnet.nl" | sort -u > output-wayback.txt;
+echo $1 | waybackurls | grep "\.$2" | sed 's/\?.*//' | sort -u > output-wayback.txt;
 echo "amount of urls: $(cat output-wayback.txt | wc -l)"
 for a in $(cat output-wayback.txt)
 do
