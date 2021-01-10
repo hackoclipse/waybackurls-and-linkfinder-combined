@@ -1,5 +1,4 @@
 # waybackurls and linkfinder combined
-a small project to combine linkfinder with the waybackmachine.
 
 this is a project to combine linkfinder and waybackurls:
 
