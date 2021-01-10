@@ -1,4 +1,6 @@
 #!/bin/bash
+# credit bl4ckh4ck5
+# https://twitter.com/bl4ckh4ck5
 echo $1 | waybackurls | grep "\.$2" | sed 's/\?.*//' | sort -u > output-wayback.txt;
 echo "amount of urls: $(cat output-wayback.txt | wc -l)"
 for a in $(cat output-wayback.txt)
