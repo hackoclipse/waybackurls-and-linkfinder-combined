@@ -10,7 +10,7 @@ do
 done
 cat output-wayback-urls-download.txt | sed 's/null//' > output-wayback-urls-download-fixxed-null.txt;
 
-wget -nv -i output-wayback-urls-download-fixxed-null.txt; 
+wget -k -nv -i output-wayback-urls-download-fixxed-null.txt; 
 
 python3 ../linkfinder.py -i "*.$2" --output cli | sort -u > output-all-urls-wayback-js.txt # change to location with linkfinder.py file.
 
